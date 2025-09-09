@@ -43,6 +43,7 @@ const Register: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [apiError, setApiError] = useState<string | null>(null)
   const { register: registerUser } = useAuth()
   const navigate = useNavigate()
 
@@ -57,6 +58,7 @@ const Register: React.FC = () => {
   const onSubmit = async (data: RegisterFormData) => {
     try {
       setIsLoading(true)
+      setApiError(null)
       const { confirmPassword, collegeName, collegeCode, ...userData } = data
       await registerUser({
         ...userData,
@@ -67,8 +69,9 @@ const Register: React.FC = () => {
       })
       navigate('/dashboard')
     } catch (error: any) {
-      console.error('Registration error:', error.message)
-      // You can add toast notification here
+      const msg = error?.message || error?.response?.data?.message || 'Registration failed'
+      setApiError(msg)
+      console.error('Registration error:', msg)
     } finally {
       setIsLoading(false)
     }
@@ -89,6 +92,11 @@ const Register: React.FC = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
+          {apiError && (
+            <div className="mb-4 rounded-md border border-destructive/40 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+              {apiError}
+            </div>
+          )}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
