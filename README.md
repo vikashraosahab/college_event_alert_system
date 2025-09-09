@@ -200,6 +200,16 @@ Authorization: Bearer <your-jwt-token>
 - `GET /colleges/:id` - Get college by ID
 
 ## 🎨 UI Components
+### Registration Page
+<img width="1920" height="1080" alt="registerAuth" src="https://github.com/user-attachments/assets/2b69a7ca-e4bc-4877-bd0c-ead7abddc459" />
+### Login Page
+<img width="1920" height="1080" alt="login" src="https://github.com/user-attachments/assets/473b8e7d-42cb-4ccd-8ad1-6b1bdc999117" />
+<img width="1920" height="1080" alt="Screenshot from 2025-09-09 23-31-47" src="https://github.com/user-attachments/assets/ea77c955-c5fb-4440-8364-9c3b1aa1ef12" />
+<img width="1920" height="1080" alt="Screenshot from 2025-09-09 23-31-55" src="https://github.com/user-attachments/assets/fbd1b81b-1cac-4744-909a-8193ae43a33b" />
+<img width="1920" height="1080" alt="Screenshot from 2025-09-09 23-32-02" src="https://github.com/user-attachments/assets/a45bfce7-c5c4-4659-a872-69723aa46308" />
+
+
+
 
 ### Design System
 - **Colors**: Consistent color palette with CSS variables
